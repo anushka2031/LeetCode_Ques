@@ -4,21 +4,17 @@ public class buyAndSell {
 
         int[] arr = {7,1,5,3,6,4};
         // int[] arr = {7,6,4,3,1};
-        int l = 0;
-        int r = arr.length-1;
-        int maxProfit = 0;
+       
 
-        while (l<r) {
-            
-            if(arr[l] < arr[r]){
-                maxProfit = arr[r] - arr[l];
-            }
+        int min_price = arr[0];
+        int maxprof = 0;
 
-            l++;
-            r--;
+        for(int i=1;i<arr.length;i++){
+            maxprof = Math.max(maxprof,arr[i]-min_price);
+            min_price = Math.min(arr[i],min_price);
         }
 
-        System.out.println(maxProfit);
+        System.out.println(maxprof);
 
 
     }
